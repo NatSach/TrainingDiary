@@ -1,0 +1,72 @@
+﻿@using TrainingDiary.Enums
+@model TrainingDiary.ViewModels.MessageViewModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Outbox[0].Receiver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Outbox[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Outbox[0].SendDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Requests[0].RequestStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model.Requests)
+        {
+            string rowClass = string.Empty;
+
+            switch (request.RequestStatus)
+            {
+                case RequestStatus.Awaiting:
+                    rowClass = "table-warning";
+
+                    break;
+
+                case RequestStatus.Canceled:
+                    rowClass = "table-danger";
+
+                    break;
+
+                case RequestStatus.Confirmed:
+                    rowClass = "table-success";
+
+                    break;
+            }
+            string rowStyle = string.Empty;
+            if (!request.IsReadBySender)
+            {
+                rowStyle = "font-weight:bold";
+            }
+
+            <tr class="@rowClass" style="@rowStyle">
+                <td>
+                    @Html.DisplayFor(modelItem => request.Receiver.FirstName) @Html.DisplayFor(modelItem => request.Receiver.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => request.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => request.SendDate)
+                </td>
+                <td>
+                    <b>
+                        @Html.DisplayFor(modelItem => request.RequestStatus)
+                    </b>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@request.Id">Details</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+</table>
+

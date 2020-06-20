@@ -1,0 +1,32 @@
+﻿@page
+@using TrainingDiary.Enums;
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Profile details</h4>
+
+        <form id="change-password-form" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            @if (User.IsInRole(Role.Player))
+            {
+                <partial name="_PlayerProfilePartial" for="PlayerVM" />
+            }
+            else if (User.IsInRole(Role.Coach))
+            {
+                <partial name="_CoachProfilePartial" for="CoachVM" />
+            }
+
+            <button type="submit" class="btn btn-secondary">Update</button>
+        </form>
+    </div>
+    </div>
+
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }

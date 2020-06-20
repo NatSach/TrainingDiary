@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TrainingDiary.Models.FullWorkout>
+@using TrainingDiary.Enums;
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th style="min-width: 150px">
+                @if (User.IsInRole(Role.Coach))
+                {
+                    <a class="btn btn-secondary" asp-controller="FullWorkout" asp-action="Create">Create New</a>
+                }
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    <a asp-controller="Fullworkout" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-controller="Fullworkout" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-controller="Fullworkout" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

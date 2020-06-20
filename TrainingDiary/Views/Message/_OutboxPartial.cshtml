@@ -1,0 +1,37 @@
+﻿@model TrainingDiary.ViewModels.MessageViewModel
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Outbox[0].Receiver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Outbox[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Outbox[0].SendDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var message in Model.Outbox)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => message.Receiver.FirstName) @Html.DisplayFor(modelItem => message.Receiver.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => message.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => message.SendDate)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@message.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@message.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

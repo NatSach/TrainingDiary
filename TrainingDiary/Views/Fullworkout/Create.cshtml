@@ -1,0 +1,112 @@
+﻿@model TrainingDiary.Models.FullWorkout
+
+<h4>FullWorkout</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <partial name="_BaseEventCreatePartial" />
+
+                <h4>Training plan </h4>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.Content" class="control-label"></label>
+                    <input asp-for="@Model.Plan.Content" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Content" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.OWB1" class="control-label"></label>
+                    <input asp-for="@Model.Plan.OWB1" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.OWB1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.OWB2" class="control-label"></label>
+                    <input asp-for="@Model.Plan.OWB2" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.OWB2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.WB3" class="control-label"></label>
+                    <input asp-for="@Model.Plan.WB3" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.WB3" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.ZB" class="control-label"></label>
+                    <input asp-for="@Model.Plan.ZB" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.ZB" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.KR" class="control-label"></label>
+                    <input asp-for="@Model.Plan.KR" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.KR" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.GL" class="control-label"></label>
+                    <input asp-for="@Model.Plan.GL" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.GL" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.DL" class="control-label"></label>
+                    <input asp-for="@Model.Plan.DL" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.DL" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.Rhythm" class="control-label"></label>
+                    <input asp-for="@Model.Plan.Rhythm" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Rhythm" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.RelativeSpeed" class="control-label"></label>
+                    <input asp-for="@Model.Plan.RelativeSpeed" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.RelativeSpeed" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.MaxSpeed" class="control-label"></label>
+                    <input asp-for="@Model.Plan.MaxSpeed" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.MaxSpeed" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.Skip" class="control-label"></label>
+                    <input asp-for="@Model.Plan.Skip" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Skip" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.MultipleJump" class="control-label"></label>
+                    <input asp-for="@Model.Plan.MultipleJump" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.MultipleJump" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.MS" class="control-label"></label>
+                    <input asp-for="@Model.Plan.MS" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.MS" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.BPG" class="control-label"></label>
+                    <input asp-for="@Model.Plan.BPG" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.BPG" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.KMStart" class="control-label"></label>
+                    <input asp-for="@Model.Plan.KMStart" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.KMStart" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.Scamper" class="control-label"></label>
+                    <input asp-for="@Model.Plan.Scamper" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Scamper" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Plan.Comment" class="control-label"></label>
+                    <input asp-for="@Model.Plan.Comment" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Comment" class="text-danger"></span>
+                </div>
+                <input type="submit" value="Create" class="btn btn-secondary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

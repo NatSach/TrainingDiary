@@ -1,0 +1,57 @@
+﻿@using TrainingDiary.Enums
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<CalendarEvent>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
+                height: 'parent',
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                },
+                defaultView: 'dayGridMonth',
+                defaultDate: '@DateTime.Now.ToString("yyyy-MM-dd")',
+                navLinks: true, // can click day/week names to navigate views
+                editable: false,
+                eventLimit: false, // allow "more" link when too many events
+                events: [
+                    @foreach(var calendar in Model)
+                    {
+                        @Html.Raw(@calendar.ToString() + ",")
+                    }
+                ]
+            });
+
+            calendar.render();
+        });
+</script>
+@{
+    if (User.IsInRole(Role.Coach))
+    {
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Add new event
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" asp-action="Create" asp-controller="Fullworkout"> @EventType.Fullworkout.ToString()</a>
+            <a class="dropdown-item" asp-action="Create" asp-controller="Start">@EventType.Start.ToString()</a>
+            <a class="dropdown-item" asp-action="Create" asp-controller="Camp">@EventType.Camp.ToString()</a>
+        </div>
+        <p>
+
+        </p>
+    </div>
+    }
+}
+
+<div id='calendar-container'>
+    <div id='calendar'></div>
+</div>

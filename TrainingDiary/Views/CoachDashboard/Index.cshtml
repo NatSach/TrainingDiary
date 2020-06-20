@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "My players";
+}
+@model IEnumerable<PlayerViewModel>
+@using TrainingDiary.ViewModels
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (PlayerViewModel player in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(x => player.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(x => player.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(x => player.Email)
+            </td>
+            <td>
+                <a asp-controller="CoachDashboard" asp-action="PlayerDetails" asp-route-id="@player.Email">Details</a> |
+                <a asp-action="DeleteConnection" asp-route-id="@player.Email">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

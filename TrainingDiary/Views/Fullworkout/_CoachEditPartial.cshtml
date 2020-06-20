@@ -1,0 +1,340 @@
+﻿@model TrainingDiary.Models.FullWorkout
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Plan)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Realization)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.Content)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.Content" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Content" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.Content" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.Content" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.OWB1)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.OWB1" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.OWB1" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.OWB1" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.OWB1" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.OWB2)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.OWB2" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.OWB2" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.OWB2" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.OWB2" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.WB3)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.WB3" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.WB3" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.WB3" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.WB3" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.ZB)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.ZB" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.ZB" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.ZB" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.ZB" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.KR)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.KR" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.KR" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.KR" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.KR" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.GL)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.GL" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.GL" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.GL" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.GL" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.DL)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.DL" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.DL" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.DL" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.DL" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.Rhythm)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.Rhythm" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Rhythm" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.Rhythm" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.Rhythm" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.RelativeSpeed)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.RelativeSpeed" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.RelativeSpeed" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.RelativeSpeed" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.RelativeSpeed" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.MaxSpeed)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.MaxSpeed" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.MaxSpeed" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.MaxSpeed" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.MaxSpeed" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.Skip)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.Skip" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Skip" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.Skip" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.Skip" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.MultipleJump)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.MultipleJump" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.MultipleJump" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.MultipleJump" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.MultipleJump" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.MS)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.MS" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.MS" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.MS" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.MS" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.BPG)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.BPG" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.BPG" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.BPG" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.BPG" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.KMStart)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.KMStart" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.KMStart" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.KMStart" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.KMStart" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.Scamper)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.Scamper" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Scamper" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Realization.Scamper" class="form-control" />
+                    <span asp-validation-for="@Model.Realization.Scamper" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">
+                @Html.DisplayNameFor(model => model.Plan.Comment)
+            </th>
+            <td>
+                <div class="form-group">
+                    <input asp-for="@Model.Plan.Comment" class="form-control" />
+                    <span asp-validation-for="@Model.Plan.Comment" class="text-danger"></span>
+                </div>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Realization.Comment)
+            </td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,389 @@
+﻿@{
+    ViewData["Title"] = "Workout details";
+}
+@model FullWorkout
+
+<partial name="_BaseEventDetailsPartial" />
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="pills-data-tab" data-toggle="pill" href="#pills-data"
+           role="tab" aria-controls="pills-data" aria-selected="true">
+            Data
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="pills-statistics-tab" data-toggle="pill" href="#pills-statistics"
+           role="tab" aria-controls="pills-statistics" aria-selected="false">
+            Statistics
+        </a>
+    </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-data" role="tabpanel" aria-labelledby="pills-data-tab">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">
+
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Plan)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Realization)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.Content)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.Content)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.Content)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.OWB1)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.OWB1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.OWB1)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.OWB2)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.OWB2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.OWB2)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.WB3)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.WB3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.WB3)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.ZB)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.ZB)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.ZB)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.KR)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.KR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.KR)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.GL)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.GL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.GL)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.DL)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.DL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.DL)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.Rhythm)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.Rhythm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.Rhythm)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.RelativeSpeed)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.RelativeSpeed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.RelativeSpeed)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.MaxSpeed)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.MaxSpeed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.MaxSpeed)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.Skip)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.Skip)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.Skip)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.MultipleJump)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.MultipleJump)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.MultipleJump)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.MS)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.MS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.MS)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.BPG)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.BPG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.BPG)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.KMStart)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.KMStart)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.KMStart)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.Scamper)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.Scamper)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.Scamper)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Plan.Comment)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Plan.Comment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Realization.Comment)
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="pills-statistics" role="tabpanel" aria-labelledby="pills-statistics-tab">
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+        <br />
+        <div>
+            <canvas id="myChart2"></canvas>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/Chart.js"></script>
+<script>
+    var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
+
+    var chBar = document.getElementById("myChart");
+    if (chBar) {
+        new Chart(chBar, {
+            type: 'bar',
+            data: {
+                labels: [
+                    "@Html.DisplayNameFor(model => model.Plan.OWB1)",
+                    "@Html.DisplayNameFor(model => model.Plan.OWB2)",
+                    "@Html.DisplayNameFor(model => model.Plan.WB3)",
+                    "@Html.DisplayNameFor(model => model.Plan.ZB)",
+                    "@Html.DisplayNameFor(model => model.Plan.KR)",
+                    "@Html.DisplayNameFor(model => model.Plan.GL)",
+                    "@Html.DisplayNameFor(model => model.Plan.DL)",
+                    "@Html.DisplayNameFor(model => model.Plan.Rhythm)"
+                ],
+                datasets: [{
+                    data: [
+                        @Html.DisplayFor(model => model.Plan.OWB1),
+                        @Html.DisplayFor(model => model.Plan.OWB2),
+                        @Html.DisplayFor(model => model.Plan.WB3),
+                        @Html.DisplayFor(model => model.Plan.ZB),
+                        @Html.DisplayFor(model => model.Plan.KR),
+                        @Html.DisplayFor(model => model.Plan.GL),
+                        @Html.DisplayFor(model => model.Plan.DL),
+                        @Html.DisplayFor(model => model.Plan.Rhythm)
+                    ],
+                    backgroundColor: colors[0],
+                    label: "@Html.DisplayNameFor(model => model.Plan)"
+                },
+                {
+                    data: [
+                        @Html.DisplayFor(model => model.Realization.OWB1),
+                        @Html.DisplayFor(model => model.Realization.OWB2),
+                        @Html.DisplayFor(model => model.Realization.WB3),
+                        @Html.DisplayFor(model => model.Realization.ZB),
+                        @Html.DisplayFor(model => model.Realization.KR),
+                        @Html.DisplayFor(model => model.Realization.GL),
+                        @Html.DisplayFor(model => model.Realization.DL),
+                        @Html.DisplayFor(model => model.Realization.Rhythm)
+                    ],
+                    backgroundColor: colors[1],
+                    label: "@Html.DisplayNameFor(model => model.Realization)"
+                }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    labels: {
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        barPercentage: 0.4,
+                        categoryPercentage: 0.5
+                    }]
+                }
+            }
+        });
+    }
+    var chBar2 = document.getElementById("myChart2");
+    if (chBar2) {
+        new Chart(chBar2, {
+            type: 'bar',
+            data: {
+                labels: [
+                    "@Html.DisplayNameFor(model => model.Plan.RelativeSpeed)",
+                    "@Html.DisplayNameFor(model => model.Plan.MaxSpeed)",
+                    "@Html.DisplayNameFor(model => model.Plan.Skip)",
+                    "@Html.DisplayNameFor(model => model.Plan.MultipleJump)",
+                    "@Html.DisplayNameFor(model => model.Plan.MS)",
+                    "@Html.DisplayNameFor(model => model.Plan.BPG)",
+                    "@Html.DisplayNameFor(model => model.Plan.KMStart)",
+                    "@Html.DisplayNameFor(model => model.Plan.Scamper)"
+                ],
+                datasets: [{
+                    data: [
+                        @Html.DisplayFor(model => model.Plan.RelativeSpeed),
+                        @Html.DisplayFor(model => model.Plan.MaxSpeed),
+                        @Html.DisplayFor(model => model.Plan.Skip),
+                        @Html.DisplayFor(model => model.Plan.MultipleJump),
+                        @Html.DisplayFor(model => model.Plan.MS),
+                        @Html.DisplayFor(model => model.Plan.BPG),
+                        @Html.DisplayFor(model => model.Plan.KMStart),
+                        @Html.DisplayFor(model => model.Plan.Scamper)
+                    ],
+                    backgroundColor: colors[0],
+                    label: "@Html.DisplayNameFor(model => model.Plan)"
+                },
+                {
+                    data: [
+                        @Html.DisplayFor(model => model.Realization.RelativeSpeed),
+                        @Html.DisplayFor(model => model.Realization.MaxSpeed),
+                        @Html.DisplayFor(model => model.Realization.Skip),
+                        @Html.DisplayFor(model => model.Realization.MultipleJump),
+                        @Html.DisplayFor(model => model.Realization.MS),
+                        @Html.DisplayFor(model => model.Realization.BPG),
+                        @Html.DisplayFor(model => model.Realization.KMStart),
+                        @Html.DisplayFor(model => model.Realization.Scamper)
+                    ],
+                    backgroundColor: colors[1],
+                    label: "@Html.DisplayNameFor(model => model.Realization)"
+                }]
+            },
+            options: {
+                legend: {
+                    display: true
+                },
+                scales: {
+                    xAxes: [{
+                        barPercentage: 0.4,
+                        categoryPercentage: 0.5
+                    }]
+                }
+            }
+        });
+    }
+</script>

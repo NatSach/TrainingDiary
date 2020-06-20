@@ -1,0 +1,36 @@
+﻿@model TrainingDiary.Models.BaseEvent
+@inject TrainingDiary.Services.IUserService UserService
+@inject TrainingDiary.Services.IDbContextService DbContextService
+
+@{
+    Coach coach = await UserService.GetUser(User) as Coach;
+    List<Player> players = await DbContextService.GetPlayersForCoach(coach?.Id);
+
+    if (players.Any())
+    {
+        ViewData["PlayerList"] = players.Select(x => new SelectListItem(x.FirstName + " " + x.LastName, x.Email)).ToList();
+    }
+}
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label asp-for="EventName" class="control-label"></label>
+    <input asp-for="EventName" class="form-control" />
+    <span asp-validation-for="EventName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="StartDate" class="control-label"></label>
+    <input asp-for="StartDate" class="form-control" />
+    <span asp-validation-for="StartDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="EndDate" class="control-label"></label>
+    <input asp-for="EndDate" class="form-control" />
+    <span asp-validation-for="EndDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Player"></label>
+    <select asp-for="PlayerEmail" asp-items="@ViewData["PlayerList"] as IEnumerable<SelectListItem>" class="form-control">
+    </select>
+    <span asp-validation-for="Player" class="text-danger"></span>
+</div>

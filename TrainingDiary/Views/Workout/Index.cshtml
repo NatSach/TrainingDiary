@@ -1,0 +1,135 @@
+﻿@model IEnumerable<TrainingDiary.Models.Workout>
+
+@{
+    Layout = null;
+}
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OWB1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OWB2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WB3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rhythm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RelativeSpeed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxSpeed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MultipleJump)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BPG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KMStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scamper)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OWB1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OWB2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WB3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rhythm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RelativeSpeed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxSpeed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MultipleJump)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BPG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KMStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scamper)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

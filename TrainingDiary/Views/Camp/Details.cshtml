@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Camp details";
+}
+@model Camp
+
+<partial name="_BaseEventDetailsPartial" />
+<h6>@Html.DisplayFor(model => model.Location)</h6>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.TrainingList[0].EventName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.TrainingList[0].StartDate)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.TrainingList[0].EndDate)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (FullWorkout training in Model.TrainingList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => training.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => training.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => training.EndDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-controller="FullWorkout" asp-route-id="@training.Id">Edit</a> |
+                    <a asp-action="Details" asp-controller="FullWorkout" asp-route-id="@training.Id">Details</a> |
+                    <a asp-action="Delete" asp-controller="FullWorkout" asp-route-id="@training.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

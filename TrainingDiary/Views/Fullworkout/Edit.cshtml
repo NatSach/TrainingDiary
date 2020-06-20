@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Workout edit";
+}
+@using TrainingDiary.Enums
+@model FullWorkout
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @{
+        if (User.IsInRole(Role.Coach))
+        {
+            <partial name="_BaseEventEditPartial" />
+            <partial name="_CoachEditPartial" />
+        }
+        else if (User.IsInRole(Role.Player))
+        {
+            <partial name="_BaseEventDetailsPartial" />
+            <partial name="_PlayerEditPartial" />
+        }
+    }
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-secondary" />
+    </div>
+</form>
